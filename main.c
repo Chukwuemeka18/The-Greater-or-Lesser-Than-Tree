@@ -80,6 +80,11 @@ int main(void){
           temp = temp->right;
         }
       }
+      else{
+        break;
+      }
+
+
     
     printf("Want to stop? Yes(1) or No (0)?");
     scanf("%i", &n);
@@ -113,6 +118,10 @@ int main(void){
         else{
           temp = temp->left;
         }
+      }
+
+      else{
+        break;
       }
     
     printf("Want to stop? Yes(1) or No (0)?");
