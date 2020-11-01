@@ -89,6 +89,41 @@ int main(void){
   }
 
 
+
+
+
+
+
+  int nn = 0;
+  while(nn == 0){
+    
+    printf("Put in another number:");
+    int y = 0;
+    scanf("%i", &y);
+
+    while(nn == 0){
+      
+      if (temp->num > y){
+        if (temp->left == NULL){
+          node* a = malloc(sizeof(node));
+          temp->left = a;
+          temp->left->num = y;
+          break;
+        }
+        else{
+          temp = temp->left;
+        }
+      }
+    
+    printf("Want to stop? Yes(1) or No (0)?");
+    scanf("%i", &nn);
+    
+    }
+
+  }
+
+  
+
 for ( node* temp2 = list; temp2 != NULL; temp2 = temp2->right){
     printf("%i\n",temp2->num);
   }
