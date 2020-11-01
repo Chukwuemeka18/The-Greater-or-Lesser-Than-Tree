@@ -51,19 +51,30 @@ if x > root->num
 
 int main(void){
 
-  printf("Put in a number:");
+  printf("Put in the root number: ");
   int x = 0;
   scanf("%i", &x);
+  printf("\n");
 
   node* a = malloc(sizeof(node));
   a->num = x;
   node* temp = a;
+  node* temp2 = a;
   node* list = temp;
+
+
+
+
+
+
+
+
+
 
   int n = 0;
   while(n == 0){
     
-    printf("Put in another number:");
+    printf("Put in another number greater than before:");
     int y = 0;
     scanf("%i", &y);
 
@@ -80,18 +91,23 @@ int main(void){
           temp = temp->right;
         }
       }
-      else{
-        break;
-      }
 
 
     
-    printf("Want to stop? Yes(1) or No (0)?");
+    printf("Want to stop? Yes(1) or No (0)?\n");
     scanf("%i", &n);
     
     }
 
   }
+
+  printf("\n");
+
+
+
+
+
+
 
 
 
@@ -102,39 +118,60 @@ int main(void){
   int nn = 0;
   while(nn == 0){
     
-    printf("Put in another number:");
+    printf("Put in another number lesser than before:");
     int y = 0;
     scanf("%i", &y);
 
     while(nn == 0){
       
-      if (temp->num > y){
-        if (temp->left == NULL){
+      if (temp2->num > y){
+        if (temp2->left == NULL){
           node* a = malloc(sizeof(node));
-          temp->left = a;
-          temp->left->num = y;
+          temp2->left = a;
+          temp2->left->num = y;
           break;
         }
         else{
-          temp = temp->left;
+          temp2 = temp2->left;
         }
       }
 
-      else{
-        break;
-      }
+     
     
-    printf("Want to stop? Yes(1) or No (0)?");
+    printf("Want to stop? Yes(1) or No (0)?\n");
     scanf("%i", &nn);
     
     }
 
   }
 
+  printf("\n");
   
 
-for ( node* temp2 = list; temp2 != NULL; temp2 = temp2->right){
-    printf("%i\n",temp2->num);
+
+
+
+
+
+
+
+
+
+
+
+
+  printf("    %i\n",list->num);
+
+  for ( node* temp3 = list; temp3 != NULL; temp3 = temp3->right){
+    if(temp3->num != list->num){
+      printf("        %i\n",temp3->num);
+    }
+  }
+
+  for ( node* temp4 = list; temp4 != NULL; temp4 = temp4->left){
+      if(temp4->num != list->num){
+      printf("%i\n",temp4->num);
+    }
   }
 
 
